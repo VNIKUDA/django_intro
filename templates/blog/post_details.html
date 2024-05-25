@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{post.title}} - {{post.author.name}}</title>
+</head>
+<body>
+    <h2>{{post.title}}</h3>
+    <h4>{{post.author.name}} - {{post.published_date}}</h4>
+
+    <p>
+        {{post.content}}
+    </p>
+
+    <br>
+
+    <h3>Коментарі</h3>
+    {% for comment in post.comments.all %}
+        <hr>
+        <h4>{{comment.author.name}} - {{comment.created_date}}</h4>
+        <p>{{comment.text}}</p>
+    {% endfor %}
+</body>
+</html>

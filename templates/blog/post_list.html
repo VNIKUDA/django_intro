@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Posts</title>
+    <title>Post list</title>
 </head>
 <body>
-    <h1>Posts: </h1>
+    <h1>Post list: </h1>
 
     <ul>
         {% for post in post_list %}
 
             <li>
-                {{post.title}} - {{post.published_date}}
+                {{post.title}} - {{post.published_date}}. <a href="post_details/{{post.id}}">детальніше</a>
             </li>
 
         {% endfor %}
